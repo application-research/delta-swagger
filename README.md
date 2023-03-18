@@ -16,8 +16,10 @@ apt-get install -y wget jq hwloc ocl-icd-opencl-dev git libhwloc-dev pkg-config 
 apt-get install -y cargo
 ```
 
-## Run
+# Run
 specify the branch name to generate the swagger file. The default branch is `main`
 ```
 make all BRANCH=main
 ```
+# Author
+Protocol Labs Outercore Engineering.
