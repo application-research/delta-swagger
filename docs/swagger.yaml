@@ -1,5 +1,14 @@
 basePath: /
 definitions:
+  api.AddWalletRequest:
+    properties:
+      address:
+        type: string
+      key_type:
+        type: string
+      private_key:
+        type: string
+    type: object
   api.DealResponse:
     properties:
       content_id:
@@ -39,6 +48,129 @@ paths:
           schema:
             additionalProperties: true
             type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: It creates a new wallet and saves it to the database
+      tags:
+        - Admin
+  /admin/wallet/list:
+    get:
+      consumes:
+        - application/json
+      description: It creates a new wallet and saves it to the database
+      parameters:
+        - description: address
+          in: path
+          name: address
+          required: true
+          type: string
+        - description: key_type
+          in: path
+          name: key_type
+          required: true
+          type: string
+        - description: private_key
+          in: path
+          name: private_key
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.AddWalletRequest'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: It creates a new wallet and saves it to the database
+      tags:
+        - Admin
+  /admin/wallet/register:
+    post:
+      consumes:
+        - application/json
+      description: It creates a new wallet and saves it to the database
+      parameters:
+        - description: address
+          in: path
+          name: address
+          required: true
+          type: string
+        - description: key_type
+          in: path
+          name: key_type
+          required: true
+          type: string
+        - description: private_key
+          in: path
+          name: private_key
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.AddWalletRequest'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      summary: It creates a new wallet and saves it to the database
+      tags:
+        - Admin
+  /admin/wallet/register-hex:
+    post:
+      consumes:
+        - application/json
+      description: It creates a new wallet and saves it to the database
+      parameters:
+        - description: address
+          in: path
+          name: address
+          required: true
+          type: string
+        - description: key_type
+          in: path
+          name: key_type
+          required: true
+          type: string
+        - description: private_key
+          in: path
+          name: private_key
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/api.AddWalletRequest'
         "400":
           description: Bad Request
           schema:
